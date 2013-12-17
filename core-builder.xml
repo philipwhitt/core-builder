@@ -1,20 +1,22 @@
 <project name="core-builder" default="build">
 
-	<target name="core-build-phar">
+	<macrodef name="core-build-phar">
 
 		<attribute name="src" />
 		<attribute name="vendor" />
 		<attribute name="dest" />
 		<attribute name="entryPoint" />
 
-		<exec executable="php">
-			<arg value="@{vendor}/bin/build-phar.php" />
-			<arg line="@{src}" />
-			<arg line="@{vendor}" />
-			<arg line="@{dest}" />
-			<arg line="@{entryPoint}" />
-		</exec>
+		<sequential>
+			<exec executable="php">
+				<arg value="@{vendor}/core/builder/bin/phar-build.php" />
+				<arg line="@{src}" />
+				<arg line="@{vendor}" />
+				<arg line="@{dest}" />
+				<arg line="@{entryPoint}" />
+			</exec>
+		</sequential>
 
-	</target>
+	</macrodef>
 
 </project> 
