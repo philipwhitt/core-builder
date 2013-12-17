@@ -1,0 +1,14 @@
+{
+    "name": "core/builder",
+    "type": "library",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Philip Whitt"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+	"bin": ["core-builder.xml"]
+}

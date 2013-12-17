@@ -1,4 +1,4 @@
 core-builder
 ============
 
-Builds a phar file for distribution 
+Builds a phar file for distribution using ant
