@@ -1,11 +1,11 @@
 <?php
 
-$src        = $argv[1];
+$srcRoot    = $argv[1];
 $vendorRoot = $argv[2];
 $buildRoot  = $argv[3];
 $entryPoint = $argv[4];
 
-$phar = new Phar($buildRoot . "/core-app.phar", FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, "core-app.phar");
+$phar = new Phar($buildRoot . "/app.phar", FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, "app.phar");
 
 $phar->buildFromDirectory($vendorRoot, '/.php$/');
 $phar->buildFromDirectory($srcRoot,    '/.php|.html|.tpl$/');
